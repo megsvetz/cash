@@ -11,8 +11,8 @@
 
     <% @members.each do |f| %>
     <p><%= link_to(member.name, member_path(member.id)) %></p>
-    <a href="<%= edit_meal_path(meal.id) %>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a href="<%= meal_path(meal.id) %>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+    <a href="<%= edit_member_path(member.id) %>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a href="<%= member_path(member.id) %>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
     <% end %>
 
 <!-- <section id="overview" class="designed-to-be">

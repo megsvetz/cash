@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       flash[:alert] = 'Wrong username or password'
       render :new
     end
+  end
 
   def destroy
     sessions[:family_id]

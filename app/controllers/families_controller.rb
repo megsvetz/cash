@@ -11,7 +11,7 @@ class FamiliesController < ApplicationController
   def create
     @family = Family.find(params[:id])
     if @family.update(family_params)
-      redirect_to members_index_path
+      redirect_to login_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class FamiliesController < ApplicationController
   def update
     @family = Family.find(params[:id])
     if @family.update(family_params)
-      redirect_to sessions_new_path
+      redirect_to loginS_path
     else
       render :edit
     end

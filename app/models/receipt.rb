@@ -1,3 +1,3 @@
 class Receipt < ActiveRecord::Base
-  belong_to :member
+  belongs_to :member
 end

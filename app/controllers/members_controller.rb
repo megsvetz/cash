@@ -23,7 +23,7 @@ class MembersController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
-    if @member.update@member_params)
+    if @member.update(member_params)
       redirect_to members_index_path
     else
       render :edit

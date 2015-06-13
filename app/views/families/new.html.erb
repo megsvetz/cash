@@ -1,10 +1,12 @@
-<h1> SIGN UP! </h1>
+<div style="text-align:center">
+  <br><h1> SIGN UP! </h1><br>
 
-<%= form_for(@new_family, url: family_signup_path) do |f| %>
-  Username: <%= f.text_field(:username) %><br>
-  Password: <%= f.password_field(:password) %><br>
-  Password Confirmation: <%= f.password_field(:password_confirmation) %><br>
+  <%= form_for(@family, url: signup_path) do |f| %>
+    Username: <%= f.text_field(:username) %><br><br>
+    Password: <%= f.password_field(:password) %><br><br>
+    Password Confirmation: <%= f.password_field(:password_confirmation) %><br><br>
 
-  <%= f.submit('Sign up!') %>
-
+    <%= f.submit('Sign up!') %>
+<br><br>
   <% end %>
+</div>

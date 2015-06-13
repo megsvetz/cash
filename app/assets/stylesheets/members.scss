@@ -1,3 +1,92 @@
-// Place all the styles related to the members controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* panel 2. Ux course designed to be.... */
+.designed-to-be {
+  padding-top: 25px;
+}
+.classroom {
+  background-image: url('/images/female.png');
+}
+.tech {
+  background-image: url('/images/male.png');
+}
+.slcPic {
+  background-image: url('/images/girl.png');
+}
+.classroom,
+.tech,
+.slcPic {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /*min-height: 250px;
+  max-height: 250px;
+  max-width: 380px;
+  min-width: 380px;*/
+  height: 215px;
+  width: 30%;
+  padding: 0;
+  color: #fff;
+}
+.tech {
+  margin: 0 15px;
+}
+.img-text {
+  font-size: 2.2em;
+  font-weight: 700;
+}
+.collabWork {
+  background-image: url('/img/collaborativework(full).jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 800px;
+  max-height: 800px;
+  margin-top: 15px;
+  color: #fff;
+  opacity: 0.7;
+  position: relative;
+}
+.collab-row {
+  margin-top: 50px;
+}
+.ux-text {
+  font-size: 8em;
+  margin-bottom: 0;
+}
+.design-text {
+  font-weight: 500;
+  margin-top: 0;
+}
+.collab-row2 {
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
+  width: 100%;
+}
+.problem,
+.creativity,
+.critical {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 2.5em;
+}
+@media screen and (max-width: 1007px) {
+  .problem, .creativity, .critical {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 855px) {
+  .problem, .creativity, .critical {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 650px) {
+  .problem, .creativity, .critical {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 400px) {
+  .problem, .creativity, .critical {
+    font-size: .9em;
+  }
+}

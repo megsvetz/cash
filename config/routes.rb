@@ -1,4 +1,38 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'receipts/index'
+
+  get 'receipts/new'
+
+  get 'receipts/edit'
+
+  get 'receipts/show'
+
+  get 'members/index'
+
+  get 'members/new'
+
+  get 'members/edit'
+
+  get 'members/show'
+
+  get 'groups/index'
+
+  get 'groups/new'
+
+  get 'groups/edit'
+
+  get 'groups/show'
+
+  get 'groups/posts'
+
+  get 'groups/index'
+
+  get 'groups/show'
+
+  get 'groups/new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

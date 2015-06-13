@@ -9,8 +9,8 @@ class FamiliesController < ApplicationController
   end
 
   def create
-    @family = Family.find(params[:id])
-    if @family.update(family_params)
+    @family = Family.new(family_params)
+    if @family.save
       redirect_to members_index_path
     else
       render :new

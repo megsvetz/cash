@@ -1,12 +1,14 @@
-<h1 class="header">New Member</h1>
+<div class="container text-center">
+  <h1 class="header">New Member</h1>
 
-<%= form_for(@member, url: members_path) do |f| %>
+  <%= form_for(@member, url: members_path) do |f| %>
 
- <%= f.text_field :name, class: "form-control", :placeholder => "Enter name", :style => "width:50%;" %>
- <br>
+   <%= f.text_field :name, class: "form-control", :placeholder => "Enter name", :style => "width:50%;" %>
+   <br>
 
- <br>
- <%= f.submit("Save New Member") %>
- <br>
+   <br>
+   <%= f.submit("Save New Member") %>
+   <br><br><br>
 
-<% end %>
+  <% end %>
+</div>

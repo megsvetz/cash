@@ -1,12 +1,15 @@
-<h1 class="header">Edit Member</h1>
+<div class="container">
+  <br>
+  <h1 class="header">Edit Member</h1>
 
-<%= form_for(@member, url: member_path) do |f| %>
+  <%= form_for(@member, url: member_path) do |f| %>
 
- <%= f.text_field :name, class: "form-control", :placeholder => "Enter name", :style => "width:50%;" %>
- <br>
+    <%= f.text_field :name, class: "form-control", :placeholder => "Enter name", :style => "width:50%;" %>
+    <br>
 
- <br>
- <%= f.submit("Save Edited Member") %>
- <br>
+    <br>
+    <%= f.submit("Save Edited Member") %>
+    <br>
 
-<% end %>
+  <% end %>
+</div>

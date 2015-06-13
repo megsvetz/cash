@@ -2,17 +2,17 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.all
-    @family = current_user
+    @family = current_family
   end
 
   def new
-    @member = Member.new
+    @member = current_family.members.build
   end
 
   def create
-    @member = Member.find(params[:id])
-    if @member.update(member_params)
-      redirect_to f@member_index_path
+    @member = current_family.members.build(member_params)
+    if @member.save
+      redirect_to members_path
     else
       render :new
     end
@@ -25,7 +25,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update(member_params)
-      redirect_to members_index_path
+      redirect_to members_path
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to members_index_path
+    redirect_to members_path
   end
 
 

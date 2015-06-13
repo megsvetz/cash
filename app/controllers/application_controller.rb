@@ -1,5 +1,16 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
   protect_from_forgery with: :exception
-end
+
+    def current_user
+      @current_user ||= Family.where(id: session[:family_id]).first
+
+    end
+
+    def current_user
+     @current_user ||= Family.where(id: session[:family_id]).first
+    end
+
+   helper_method :current_user
+
+  end

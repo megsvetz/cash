@@ -1,2 +1,6 @@
-<h1>Receipts#show</h1>
-<p>Find me in app/views/receipts/show.html.erb</p>
+<h1> Store: <%= @receipt.name %> </h1>
+<h2> Date: <%= @receipt.date %> </h2>
+<h3> Amount: $<%= @receipt.amount %> </h3>
+<h5> Description of Purchase: <%= @receipt.description %> </h5>
+<%= link_to 'Edit Receipt', edit_receipt_path(@receipt) %>
+<%= link_to 'Delete Receipt', receipt_path(@receipt), method: :delete %>

@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'groups#new'
-  post '/signup' => 'groups#create'
+  get '/signup' => 'families#new'
+  post '/signup' => 'families#create'
 
-  resources :groups
+  resources :families
   resources :members
   resources :receipts
   # The priority is based upon order of creation: first created -> highest priority.

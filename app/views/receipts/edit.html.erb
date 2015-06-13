@@ -1,2 +1,16 @@
-<h1>Receipts#edit</h1>
-<p>Find me in app/views/receipts/edit.html.erb</p>
+<h1 class="header">Edit Receipt</h1>
+
+<%= form_for(@receipt, url: receipt_path) do |f| %>
+
+  <%= f.text_field :name, class: "form-control", :placeholder => "Store: ", :style => "width:50%;" %>
+  <br>
+  <%= f.datetime_select :date, class: "form-control", :placeholder => "Date: ",:style => "width:50%;" %>
+  <br>
+  <%= f.text_field :amount, class: "form-control", :placeholder => "Receipt Amount: $",:style => "width:50%;" %>
+  <br>
+  <%= f.text_area :description, class: "form-control", :placeholder => "Description of Purchase: ",:style => "width:50%;" %>
+  <br>
+  <%= f.submit("Save Edited Receipt") %>
+  <br>
+
+<% end %>

@@ -30,7 +30,6 @@ class FamiliesController < ApplicationController
     end
   end
 
-
   def show
     @family = Family.find(params[:id])
   end
@@ -40,7 +39,6 @@ class FamiliesController < ApplicationController
     @family.destroy
     redirect_to members_index_path
   end
-
 
   private
 

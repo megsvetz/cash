@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sessions[:family_id]
-    redirect_to members_index
+    session[:family_id] = nil
+    redirect_to root_path
   end
 end

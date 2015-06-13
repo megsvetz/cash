@@ -6,7 +6,6 @@ class FamiliesController < ApplicationController
 
   def create
     @family = Family.new(family_params)
-    raise
     if @family.save
       redirect_to login_path
     else

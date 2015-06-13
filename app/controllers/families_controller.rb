@@ -33,6 +33,7 @@ class FamiliesController < ApplicationController
 
   def show
     @family = Family.find(params[:id])
+    @members = @family.members
   end
 
   def destroy

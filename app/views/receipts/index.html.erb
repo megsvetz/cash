@@ -1,3 +1,5 @@
+<br><br><br>
+
 <div class="pull-left" 
   <img src="">
 </div>
@@ -18,7 +20,7 @@
       <td><%= link_to(r.name, receipt_path(r)) %></td>
       <td><%= r.date %></td>
       <td>$ <%= r.amount %></td>
-      <td ><%= r.decription %></td>
+      <td ><%= r.description %></td>
       <td><a href="<%= edit_receipt_path(r) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
         <a href="<%= receipt_path(r) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
       </td>

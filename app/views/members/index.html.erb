@@ -10,13 +10,15 @@
       <thead>
         <tr>
           <th>Name</th>
+          <th>Total Amount</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
        <% @family.members.each do |f| %>
         <tr>
           <td><%= link_to(f.name, member_path(f)) %></td>
-      
+          <td><%= total_amount(f) %></td>
           <td><a href="<%= edit_member_path(f) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
            <a href="<%= member_path(f) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
           </td>
@@ -24,4 +26,8 @@
       <% end %>
     </tbody>
   </table>
+  <div class="pull-right">
+    <h3>Sum Total: <%= family_total_amount(current_family) %></h3>
+  </div>
+  
 </div>

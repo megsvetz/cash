@@ -6,12 +6,13 @@ class ReceiptsController < ApplicationController
 
   def new
     @receipt = Receipt.new
+    @member = Member.find(params[:member_id])
   end
 
   def create
-    @receipt = Receipt.find(params[:id])
-    if @receipt.update(receipt_params)
-      redirect_to members_show_path
+    @receipt = Receipt.new(receipt_params)
+    if @receipt.save
+      redirect_to members_path
     else
       render :new
     end
@@ -24,7 +25,7 @@ class ReceiptsController < ApplicationController
   def update
     @receipt = Receipt.find(params[:id])
     if @receipt.update(receipt_params)
-      redirect_to members_show_path
+      redirect_to members_path
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class ReceiptsController < ApplicationController
   def destroy
     @receipt = Receipt.find(params[:id])
     @receipt.destroy
-    redirect_to members_show_path
+    redirect_to members_path
   end
 
 

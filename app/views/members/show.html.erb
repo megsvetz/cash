@@ -2,7 +2,7 @@
   <br><br>
   <h1><%= @member.name %> </h1>
    <div class="pull-right">
-    <a href="<%= new_receipt_path %>" class="btn btn-lg btn-success">
+    <a href="<%= new_receipt_path(member_id: @member.id) %>" class="btn btn-lg btn-success">
       <span class="glyphicon glyphicon-plus"></span>
     </a>
   </div>
@@ -22,14 +22,17 @@
         <td><%= link_to(receipt.name, receipt_path(receipt)) %></td> 
         <td><%= receipt.date %></td>
         <td><%= receipt.amount %></td>
-        <td><%= @receipt.description %></td>
-        <td><a href="<%= edit_receipt_path(f) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
-           <a href="<%= receipt_path(f) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
+        <td><%= receipt.description %></td>
+        <td><a href="<%= edit_receipt_path(receipt) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
+           <a href="<%= receipt_path(receipt) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
           </td>
         <% end %>
       </tr>
     </tbody>
     </table>
-  </div>
+ 
+    <div class="pull-right">
+    <h3>Total: <%= total_amount(@member) %></h3>
 
+</div>
 </div>

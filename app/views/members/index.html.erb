@@ -9,35 +9,41 @@
 
 <body> -->
 
-<section id="overview" class="designed-to-be">
+    <% @members.each do |f| %>
+    <p><%= link_to(member.name, member_path(member.id)) %></p>
+    <a href="<%= edit_meal_path(meal.id) %>" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a href="<%= meal_path(meal.id) %>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+    <% end %>
+
+<!-- <section id="overview" class="designed-to-be">
  <div class="container">
-   <h2 class="text-center f-weight"><%= @family.username %></h2>
+   <h2 class="text-center f-weight"></h2>
     <div class="row">
      <div class="col-sm-4 classroom">
-       <h3 class="text-center img-text">PART-TIME</h3>
+       <h3 class="text-center img-text"></h3>
      </div>
      <div class="col-sm-4 tech">
-       <h3 class="text-center img-text">INDUSTRY SPECIFIC</h3>
+       <h3 class="text-center img-text"></h3>
      </div>
      <div class="col-sm-4 slcPic">
-       <h3 class="text-center img-text">DOWNTOWN, SLC</h3>
+       <h3 class="text-center img-text"></h3>
     </div>
   </div>
 
  </div>
  <div class="row collabWork">
    <div class="col-sm-12 col-sm-offset-2 collab-row">
-     <h1 class="ux-text">UX</h1>
-     <h1 class="design-text">DESIGN</h1>
+     <h1 class="ux-text"></h1>
+     <h1 class="design-text"></h1>
    </div>
    <div class="col-sm-12 text-center collab-row2">
-     <h3 class="problem">Problem-solving | </h3>
-     <h3 class="creativity">Creativity | </h3>
-     <h3 class="critical">Critical Thinking</h3>
+     <h3 class="problem"></h3>
+     <h3 class="creativity"></h3>
+     <h3 class="critical"></h3>
    </div>
 
  </div>
-</section>
+</section> -->
 
 <!-- </body>
 </html> -->

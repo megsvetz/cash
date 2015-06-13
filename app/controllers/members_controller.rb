@@ -2,6 +2,7 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.all
+    @family = current_user
   end
 
   def new

@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    @family = Family.new
   end
 
   def create

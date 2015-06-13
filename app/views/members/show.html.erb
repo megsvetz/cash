@@ -1,2 +1,4 @@
-<h1>Members#show</h1>
-<p>Find me in app/views/members/show.html.erb</p>
+<h1> Name: <%= @member.name %> </h1>
+
+<%= link_to 'Edit Member', edit_member_path(@member) %>
+<%= link_to 'Delete Member', member_path(@member), method: :delete %>

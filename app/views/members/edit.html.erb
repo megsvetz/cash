@@ -1,2 +1,12 @@
-<h1>Members#edit</h1>
-<p>Find me in app/views/members/edit.html.erb</p>
+<h1 class="header">Edit Member</h1>
+
+<%= form_for(@member, url: member_path) do |f| %>
+
+ <%= f.text_field :name, class: "form-control", :placeholder => "Enter name", :style => "width:50%;" %>
+ <br>
+
+ <br>
+ <%= f.submit("Save Edited Member") %>
+ <br>
+
+<% end %>

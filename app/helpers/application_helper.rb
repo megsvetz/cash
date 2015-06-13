@@ -7,7 +7,7 @@ module ApplicationHelper
     end
   end
 
-  def group_signed_in?
-    current_group.present?
+  def families_signed_in?
+    current_family.present?
   end
 end

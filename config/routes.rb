@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/signup' => 'families#new'
   post '/signup' => 'families#create'
 
-  resources :families
   resources :members
   resources :receipts
   # The priority is based upon order of creation: first created -> highest priority.

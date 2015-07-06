@@ -27,16 +27,28 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '3.3.4.1'
 gem 'font-awesome-sass', '~> 4.3.0'
+gem "paperclip", "~> 4.2"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :test do
+
+  gem 'simplecov', :require => false
+
+  gem "factory_girl_rails", "~> 4.0"
+
+  gem 'shoulda-matchers'
+
+end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

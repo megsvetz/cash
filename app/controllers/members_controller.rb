@@ -1,16 +1,18 @@
 class MembersController < ApplicationController
+  before_action :find_member, only:[:edit, :update, :show, :destroy]
 
   def index
     @members = Member.all
-    @family = current_family
+    @family = Family.where(id: session[:id]).first
   end
 
   def new
-    @member = current_family.members.build
+    @member = Member.new
+    @member.family_id = Family.where(id: session[:id]).first
   end
 
   def create
-    @member = current_family.members.build(member_params)
+    @member = Family.where(id: session[:id]).first.members.build(member_params)
     if @member.save
       redirect_to members_path
     else
@@ -19,11 +21,9 @@ class MembersController < ApplicationController
   end
 
   def edit
-    @member = Member.find(params[:id])
   end
 
   def update
-    @member = Member.find(params[:id])
     if @member.update(member_params)
       redirect_to members_path
     else
@@ -31,17 +31,13 @@ class MembersController < ApplicationController
     end
   end
 
-
   def show
-    @member = Member.find(params[:id])
   end
 
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
     redirect_to members_path
   end
-
 
   private
 
@@ -49,5 +45,11 @@ class MembersController < ApplicationController
     params.require(:member).permit(:name, :family_id)
   end
 
+  def find_member
+    @member = Member.find_by(id: params[:id])
+    unless @member
+      render(text: "Member not found.", status: :not_found)
+    end
+  end
 
 end

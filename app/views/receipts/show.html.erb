@@ -1,9 +1,14 @@
 <br>
 <div class="container"><br>
-  <h1> Store: <%= @receipt.name %> </h1>
-  <h2> Date: <%= @receipt.date %> </h2>
-  <h3> Amount: $<%= @receipt.amount %> </h3>
-  <h5> Description of Purchase: <%= @receipt.description %> </h5>
-  <%= link_to 'Edit Receipt', edit_receipt_path(@receipt) %>
-  <%= link_to 'Delete Receipt', receipt_path(@receipt), method: :delete %>
-</div>
+    <h1> Store: <%= @receipt.name %> </h1><br/>
+    <h2> Date: <%= @receipt.date %> </h2><br/>
+    <h3> Amount: $<%= @receipt.amount %> </h3><br/>
+    <% if @receipt.receipt_pic.present? %>  
+      <%= image_tag @receipt.receipt_pic.url(:medium) %>
+      <br/>
+    <% end %>
+    <h5> Description of Purchase: <%= @receipt.description %> </h5><br/>
+    
+    <a href="<%= edit_receipt_path(@receipt) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
+    <a href="<%= receipt_path(@receipt) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
+</div><br/><br/>

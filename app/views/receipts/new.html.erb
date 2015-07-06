@@ -1,18 +1,20 @@
-<div class="container text-center">
+<div class="container text-center"><br><br>
   <h1 class="header">Add New Receipt</h1>
 
   <%= form_for(@receipt, url: receipts_path, style:"text-block=center") do |f| %>
 
-    <%= f.text_field :name, class: "form-control", :placeholder => "Enter Store Name: ", :style => "width:50%;" %>
+    <%= f.text_field :name, class: "form-control", :placeholder => "Enter Store Name: ", :style => "width:100%;" %>
     <br>
    <%= f.datetime_select :date, class: "form-control", :placeholder => "Date on Receipt: ",:style => "width:50%;" %>
     <br><br>
-    <%= f.text_field :amount, class: "form-control", :placeholder => "Enter Receipt Amount: $",:style => "width:50%;" %>
+    <%= f.text_field :amount, class: "form-control", :placeholder => "Enter Receipt Amount: $",:style => "width:100%;" %>
     <br><br>
-    <%= f.text_area :description, class: "form-control", :placeholder => "Enter Purchase Description: ",:style => "width:50%;" %>
+    <%= f.text_area :description, class: "form-control", :placeholder => "Enter Purchase Description: ",:style => "width:100%;" %>
+    <br><br>
+    <%= f.file_field :receipt_pic %>
     <br><br>
     <%= f.hidden_field :member_id, value: @member.id %>
-    <%= f.submit("Save New Receipt") %>
+    <%= f.submit("Save New Receipt", class: "myButton") %>
     <br><br>
 
   <% end %>

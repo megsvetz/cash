@@ -7,7 +7,12 @@ module ApplicationHelper
     end
   end
 
+  def current_family
+    @current_family ||= Family.where(id: session[:id]).first
+  end
+
   def family_signed_in?
     current_family.present?
   end
+
 end

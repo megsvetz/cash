@@ -10,21 +10,28 @@
       <th>Store</th>
       <th>Date</th>
       <th>Amount</th>
-      <th class="col-md-6">Description</th>
-      <th>&nbsp;</th>
+      <th class="col-md-4">Description</th>
+      <th>Picture</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @receipts.each do |r| %>
-    <tr>
-      <td><%= link_to(r.name, receipt_path(r)) %></td>
-      <td><%= r.date %></td>
-      <td>$ <%= r.amount %></td>
-      <td ><%= r.description %></td>
-      <td><a href="<%= edit_receipt_path(r) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
-        <a href="<%= receipt_path(r) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
-      </td>
-    </tr>
-  <% end %>
-</tbody>
+      <tr>
+        <td><%= link_to(r.name, receipt_path(r)) %></td>
+        <td><%= r.date %></td>
+        <td>$ <%= r.amount %></td>
+        <td><%= r.description %></td>
+        <td>
+          <% if r.receipt_pic.present? %>  
+            <a href="<%=receipt_path(r)%>"><%= image_tag "tiny_receipt.jpg" :width => 100, :height => 100 %></a>
+            <br/>
+          <% end %>
+        </td>
+        <td><a href="<%= edit_receipt_path(r) %>" class="btn btn-info"><span class = "glyphicon glyphicon-pencil"></span></a>
+          <a href="<%= receipt_path(r) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-trash"></span></a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

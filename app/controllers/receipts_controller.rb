@@ -1,4 +1,5 @@
 class ReceiptsController < ApplicationController
+  before_action :find_receipt, only: [:edit, :update, :show, :destroy]
 
   def index
     @receipts = Receipt.all
@@ -6,7 +7,10 @@ class ReceiptsController < ApplicationController
 
   def new
     @receipt = Receipt.new
-    @member = Member.find(params[:member_id])
+    if @member = Member.find_by(id: params[:id])
+    else
+      render(text: "Member not found.", status: :not_found)
+    end
   end
 
   def create
@@ -19,13 +23,11 @@ class ReceiptsController < ApplicationController
   end
 
   def edit
-    @receipt = Receipt.find(params[:id])
   end
 
   def update
-    @receipt = Receipt.find(params[:id])
     if @receipt.update(receipt_params)
-      redirect_to members_path
+      redirect_to receipt_path
     else
       render :edit
     end
@@ -33,20 +35,24 @@ class ReceiptsController < ApplicationController
 
 
   def show
-    @receipt = Receipt.find(params[:id])
   end
 
   def destroy
-    @receipt = Receipt.find(params[:id])
     @receipt.destroy
-    redirect_to members_path
+    redirect_to receipts_path
   end
-
 
   private
 
   def receipt_params
-    params.require(:receipt).permit(:name, :date, :amount, :description, :member_id)
+    params.require(:receipt).permit(:name, :date, :amount, :description, :member_id, :receipt_pic)
+  end
+
+  def find_receipt
+    @receipt = Receipt.find_by(id: params[:id])
+    unless @receipt
+      render(text: "Receipt not found.", status: :not_found)
+    end
   end
 
 end
